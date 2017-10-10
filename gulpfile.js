@@ -30,9 +30,9 @@ gulp.task('scripts', () => {
         .pipe(plumber())
         .pipe(rollup({
             rollup: require('rollup'),
-            input: './src/js/gallery.js',
+            input: './src/js/imgrid.js',
             format: 'umd',
-            name: 'gallery',
+            name: 'Imgrid',
             allowRealFiles: true,
             plugins: [
                 nodeResolve(),
@@ -41,7 +41,7 @@ gulp.task('scripts', () => {
             ]
         }))
         .pipe(rename({
-            basename: "Gallery",
+            basename: "imgrid",
             suffix: "",
             extname: ".js"
         }))
@@ -63,7 +63,7 @@ gulp.task('styles', () => {
             ]
         }))
         .pipe(rename({
-            basename: "Gallery",
+            basename: "imgrid",
             suffix: "",
             extname: ".css"
         }))
@@ -98,9 +98,9 @@ gulp.task('production:scripts', () => {
     gulp.src('./src/**/*.js')
         .pipe(rollup({
             rollup: require('rollup'),
-            input: './src/js/gallery.js',
+            input: './src/js/imgrid.js',
             format: 'umd',
-            name: 'gallery',
+            name: 'Imgrid',
             allowRealFiles: true,
             plugins: [
                 nodeResolve(),
@@ -109,7 +109,7 @@ gulp.task('production:scripts', () => {
             ]
         }))
         .pipe(rename({
-            basename: "gallery",
+            basename: "imgrid",
             suffix: ".min",
             extname: ".js"
         }))
@@ -131,7 +131,7 @@ gulp.task('production:styles', () => {
         ]
     }))
     .pipe(rename({
-        basename: "gallery",
+        basename: "imgrid",
         suffix: ".min",
         extname: ".css"
     }))
@@ -148,7 +148,7 @@ gulp.task('production:styles', () => {
   */
 gulp.task('browser-sync', () => {
     browserSync.init({
-       proxy: "colorgallery.dev/index.html"
+       proxy: "imgrid.dev/index.html"
    });
 })
 

@@ -5,15 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="dist/css/gallery.css">
+  <link rel="stylesheet" href="dist/css/imgrid.css">
   <title>Gallery</title>
 </head>
 
 <body>
+  <style>
+    .gallery {
+      display: flex;
+      align-items: flex-start;
+    }
+    .gallery a {
+      width: 200px;
+      height: 150px;
+      margin: 10px;
+      overflow: hidden;
+    }
+    .gallery a > img {
+      max-height: 100%;
+      margin: auto;
+      display: block;
+    }
+  </style>
+  <div id="myGallery" class="gallery">
+    <a href="static/img/image-1.jpg">
+      <img src="static/img/thumb-1.jpg" alt="">
+    </a>
+    <a href="static/img/image-2.jpg">
+      <img src="static/img/thumb-2.jpg" alt="">
+    </a>
+    <a href="static/img/image-3.jpg">
+      <img src="static/img/thumb-3.jpg" alt="">
+    </a>
+    <a href="static/img/image-4.jpg">
+      <img src="static/img/thumb-4.jpg" alt="">
+    </a>
+  </div>
 
-  <script src="dist/js/gallery.js"></script>
+
+  <script src="dist/js/imgrid.js"></script>
   <script>
-    //...
+    new Imgrid('#myGallery');
   </script>
 </body>
 
