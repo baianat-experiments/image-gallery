@@ -1,5 +1,5 @@
 import Turbo from '@baianat/turbo';
-import { select, call } from './util';
+import { select } from './util';
 
 class Imgrid {
   constructor(selector, {
@@ -9,16 +9,16 @@ class Imgrid {
     this.options = {
       thumb
     };
-    this.init();
+    this._init();
   }
 
-  init() {
-    this.initGalley();
-    this.initItems();
-    this.initCarousal();
+  _init() {
+    this._initGalley();
+    this._initItems();
+    this._initCarousal();
   }
 
-  initGalley() {
+  _initGalley() {
     this.gallery = document.createElement('div');
     this.close = document.createElement('a');
 
@@ -35,7 +35,7 @@ class Imgrid {
     document.body.appendChild(this.gallery);
   }
 
-  initItems() {
+  _initItems() {
     this.itmes = Array.from(this.el.querySelectorAll('a'));
     this.images = this.itmes.map((item) => item.href);
     this.itmes.forEach((item, index) => {
@@ -47,7 +47,7 @@ class Imgrid {
     });
   }
 
-  initCarousal() {
+  _initCarousal() {
     this.carousel = document.createElement('div');
     this.carousel.classList.add('turbo');
     this.images.forEach((imageSrc) => {
@@ -86,7 +86,6 @@ class Imgrid {
     this.gallery.classList.remove('is-visiable');
     this.gallery.classList.add('is-hidden');
   }
-
 }
 
 export default Imgrid;
